@@ -1,4 +1,4 @@
-<?PHP  // $Id: lib.php,v 1.7.2.3 2011/06/02 14:00:16 agrabs Exp $
+<?PHP  // $Id: lib.php,v 1.7.2.2 2008/06/08 21:15:57 agrabs Exp $
 defined('FEEDBACK_INCLUDE_TEST') OR die('not allowed');
 require_once($CFG->dirroot.'/mod/feedback/item/feedback_item_class.php');
 
@@ -31,14 +31,14 @@ class feedback_item_label extends feedback_item_base {
     function create_item() {
         $item = parent::create_item();
         $labeltext = optional_param('presentation', '', PARAM_CLEANHTML);
-        $item->presentation = $labeltext;
+        $item->presentation = addslashes($labeltext);
         return $item;
     }
 
     function update_item(&$item) {
         $item = parent::update_item($item);
         $labeltext = optional_param('presentation', '', PARAM_CLEANHTML);
-        $item->presentation = $labeltext;
+        $item->presentation = addslashes($labeltext);
         return $item;
     }
 
