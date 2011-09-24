@@ -221,7 +221,7 @@
             $newitem->template = 0;
             $newitem->typ = $typ;
             $newitem->name = trim($item['#']['ITEMTEXT'][0]['#']);
-            $newitem->presentation = trim($item['#']['PRESENTATION'][0]['#']);
+            $newitem->presentation = addslashes(trim($item['#']['PRESENTATION'][0]['#']));
             //check old types of radio, check, and so on
             switch($oldtyp) {
                 case 'radio':
