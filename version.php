@@ -1,9 +1,9 @@
-<?php // $Id: version.php,v 1.18.2.37 2011/09/22 10:22:18 agrabs Exp $
+<?php // $Id: version.php,v 1.18.2.38 2011/09/24 11:04:21 agrabs Exp $
 /**
 * Code fragment to define the version of feedback
 * This fragment is called by moodle_needs_upgrading() and /admin/index.php
 *
-* @version $Id: version.php,v 1.18.2.37 2011/09/22 10:22:18 agrabs Exp $
+* @version $Id: version.php,v 1.18.2.38 2011/09/24 11:04:21 agrabs Exp $
 * @author Andreas Grabs
 * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
 * @package feedback

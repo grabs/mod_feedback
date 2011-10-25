@@ -1,8 +1,8 @@
-<?php // $Id: edit_item.php,v 1.6.2.5 2008/06/08 21:15:57 agrabs Exp $
+<?php // $Id: edit_item.php,v 1.6.2.7 2011/06/02 14:00:15 agrabs Exp $
 /**
 * prints the form to edit a dedicated item
 *
-* @version $Id: edit_item.php,v 1.6.2.5 2008/06/08 21:15:57 agrabs Exp $
+* @version $Id: edit_item.php,v 1.6.2.7 2011/06/02 14:00:15 agrabs Exp $
 * @author Andreas Grabs
 * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
 * @package feedback
@@ -14,8 +14,12 @@
     $id = optional_param('id', NULL, PARAM_INT);
     $typ = optional_param('typ', false, PARAM_ALPHA);
     $itemid = optional_param('itemid', false, PARAM_INT);
-    
-    if(!$typ)redirect(htmlspecialchars('edit.php?id=' . $id));
+    $saveitem = optional_param('saveitem', false, PARAM_BOOL);
+    $updateitem = optional_param('updateitem', false, PARAM_BOOL);
+
+    if(!$typ) {
+        redirect(htmlspecialchars('edit.php?id=' . $id));
+    }
 
     // set up some general variables
     $usehtmleditor = can_use_html_editor(); 
@@ -75,11 +79,10 @@
         // redirect(htmlspecialchars('edit.php?id=' . $id));
     // }
     
-    if(isset($formdata->saveitem) AND $formdata->saveitem == 1){
-        $newposition = $formdata->position;
-        $formdata->position = $newposition + 1;
+    if($saveitem){
+        $newposition = optional_param('position', 0, PARAM_INT);
 
-        if (!$newitemid = feedback_create_item($formdata)) {
+        if (!$newitemid = feedback_create_item($typ)) {
             $SESSION->feedback->errors[] = get_string('item_creation_failed', 'feedback');
         }else {
             $newitem = get_record('feedback_item', 'id', $newitemid);
@@ -91,12 +94,13 @@
         }
     }
     
-    if(isset($formdata->updateitem) AND $formdata->updateitem == 1){
+    if($updateitem){
+        $newposition = optional_param('position', 0, PARAM_INT);
         //update the item and go back
-        if (!feedback_update_item($item, $formdata)) {
+        if (!feedback_update_item($item)) {
             $SESSION->feedback->errors[] = get_string('item_update_failed', 'feedback');
         } else {
-            if (!feedback_move_item($item, $formdata->position)){
+            if (!feedback_move_item($item, $newposition)){
                 $SESSION->feedback->errors[] = get_string('item_update_failed', 'feedback');
             }else {
                 redirect(htmlspecialchars('edit.php?id='.$id));

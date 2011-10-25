@@ -1,8 +1,8 @@
-<?php // $Id: lib.php,v 1.7.2.21 2011/06/02 14:00:15 agrabs Exp $
+<?php // $Id: lib.php,v 1.7.2.22 2011/06/24 21:25:28 agrabs Exp $
 /**
 * includes the main-part of feedback-functions
 *
-* @version $Id: lib.php,v 1.7.2.21 2011/06/02 14:00:15 agrabs Exp $
+* @version $Id: lib.php,v 1.7.2.22 2011/06/24 21:25:28 agrabs Exp $
 * @author Andreas Grabs
 * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
 * @package feedback

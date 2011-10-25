@@ -1,8 +1,8 @@
-<?php // $Id: import.php,v 1.6.2.2 2008/06/13 21:43:02 agrabs Exp $
+<?php // $Id: import.php,v 1.6.2.3 2011/09/24 11:04:20 agrabs Exp $
 /**
 * prints the form to import items from xml-file
 *
-* @version $Id: import.php,v 1.6.2.2 2008/06/13 21:43:02 agrabs Exp $
+* @version $Id: import.php,v 1.6.2.3 2011/09/24 11:04:20 agrabs Exp $
 * @author Andreas Grabs
 * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
 * @package feedback

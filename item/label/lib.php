@@ -1,4 +1,4 @@
-<?PHP  // $Id: lib.php,v 1.7.2.2 2008/06/08 21:15:57 agrabs Exp $
+<?PHP  // $Id: lib.php,v 1.7.2.4 2011/09/22 10:22:18 agrabs Exp $
 defined('FEEDBACK_INCLUDE_TEST') OR die('not allowed');
 require_once($CFG->dirroot.'/mod/feedback/item/feedback_item_class.php');
 
