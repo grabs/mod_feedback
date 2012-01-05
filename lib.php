@@ -1,8 +1,8 @@
-<?php // $Id: lib.php,v 1.7.2.22 2011/06/24 21:25:28 agrabs Exp $
+<?php // $Id: lib.php,v 1.7.2.23 2012/01/05 17:51:32 agrabs Exp $
 /**
 * includes the main-part of feedback-functions
 *
-* @version $Id: lib.php,v 1.7.2.22 2011/06/24 21:25:28 agrabs Exp $
+* @version $Id: lib.php,v 1.7.2.23 2012/01/05 17:51:32 agrabs Exp $
 * @author Andreas Grabs
 * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
 * @package feedback
@@ -302,6 +302,16 @@ function feedback_scale_used ($feedbackid,$scaleid) {
     $return = false;
 
     return $return;
+}
+
+/** 
+ * Checks if scale is being used by any instance of feedback
+ * This is used to find out if scale used anywhere
+ * @param $scaleid int
+ * @return boolean True if the scale is used by any forum
+ */
+function feedback_scale_used_anywhere($scaleid) {
+    return false;
 }
 
 /**
